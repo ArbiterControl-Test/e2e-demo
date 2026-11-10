@@ -1,0 +1,9 @@
+{
+  "name": "e2e-uc3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Synthetic fixture for the Arbiter live suite (ARB-318). No real code or data.",
+  "dependencies": {
+    "is-number": "7.0.0"
+  }
+}
