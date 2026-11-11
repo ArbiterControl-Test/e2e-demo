@@ -1,0 +1,3 @@
+# Synthetic (D · ARB-413 M-5m)
+
+blob: QVJCSVRFUi1VQzQtVEVTVC03NzI0YmE4MDQxMjVjZjIzMTg0ZDM0ZTNhYjcyYzYxYQ==
