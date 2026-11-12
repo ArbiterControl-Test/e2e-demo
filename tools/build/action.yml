@@ -1,0 +1,8 @@
+# Synthetic fixture for the Arbiter live suite (D · ARB-413 M-4d). No workflow uses this action.
+name: build
+description: Synthetic action (D · ARB-413 M-4d).
+runs:
+  using: composite
+  steps:
+    - run: echo "synthetic build"
+      shell: sh
