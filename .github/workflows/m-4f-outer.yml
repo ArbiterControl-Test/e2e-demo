@@ -1,0 +1,7 @@
+# Synthetic fixture for the Arbiter live suite (D · ARB-413 M-4f): a reusable workflow calling another at @main.
+name: m-4f-outer
+on: workflow_call
+permissions: {}
+jobs:
+  outer:
+    uses: ArbiterControl-Test/e2e-demo/.github/workflows/m-4f-plan.yml@main

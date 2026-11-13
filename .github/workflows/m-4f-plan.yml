@@ -1,0 +1,9 @@
+# Synthetic fixture for the Arbiter live suite (D · ARB-413 M-4f): a reusable workflow. It does nothing.
+name: m-4f-plan
+on: workflow_call
+permissions: {}
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "synthetic reusable plan (D · ARB-413 M-4f)"
