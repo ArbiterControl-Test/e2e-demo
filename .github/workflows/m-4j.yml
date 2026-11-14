@@ -1,0 +1,11 @@
+# Synthetic fixture (D · ARB-413 M-4j). Not on main, so pull_request_target never runs it.
+name: m-4j
+on:
+  pull_request_target:
+permissions: {}
+jobs:
+  risky:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - run: echo "synthetic"
