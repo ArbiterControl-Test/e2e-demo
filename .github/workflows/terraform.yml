@@ -1,22 +1,9 @@
+# Synthetic fixture (D · ARB-413 M-4f, job): the terraform-plan job calls other code.
 name: terraform
-# D · ARB-413: the demo suite's synthetic `terraform-plan`, the check the starter's infrastructure/** rule requires.
-# It runs no Terraform. Synthetic fixture: no real code or data.
 on:
   pull_request:
     branches: [main]
-permissions:
-  contents: read
+permissions: {}
 jobs:
   terraform-plan:
-    runs-on: ubuntu-latest
-    steps:
-      # M-2n (approve before the plan finishes): only that case's branch waits, so the approval lands first.
-      - if: ${{ contains(github.head_ref, '/m-2n') }}
-        run: sleep 300
-      # M-4g (a fake terraform-plan in another workflow file): on that case's branch the real plan fails, so a passing
-      # terraform-plan there can only be the fake's.
-      - if: ${{ contains(github.head_ref, '/m-4g') }}
-        run: exit 1
-      # M-4e (A2 · ARB-428): the plan runs from a script in the tree, which the tracer makes a check definition.
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-      - run: bash scripts/ci/plan.sh
+    uses: ArbiterControl-Test/e2e-demo/.github/workflows/m-4f-outer.yml@main
