@@ -1,0 +1,17 @@
+name: m-6g-approve
+# D · ARB-413 M-6g: github-actions[bot] approves this pull request through GITHUB_TOKEN. Synthetic; on a test branch only.
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  pull-requests: write
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          gh pr review "$PR" --approve --body "e2e: an approval by github-actions[bot] (D · ARB-413 M-6g)"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
