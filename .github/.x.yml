@@ -1,0 +1,9 @@
+# Synthetic fixture for the Arbiter live suite (D · ARB-413 M-4b-root). It runs only by hand.
+name: m-4b-root
+on: workflow_dispatch
+permissions: {}
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "synthetic"
