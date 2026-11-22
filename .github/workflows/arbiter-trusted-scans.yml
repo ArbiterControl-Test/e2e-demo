@@ -1,12 +1,12 @@
 # Arbiter trusted scans: the caller.
 #
 # Put this file in each pilot repository at .github/workflows/arbiter-trusted-scans.yml, on its protected
-# default branch. Change only `acme/arbiter-trusted` (your trusted repository) and the two 40-character commit
+# default branch. Change only `acme/arbiter-trusted` (your trusted repository) and the three 40-character commit
 # shas (the trusted repository commit your policy pins). Never add steps, jobs, `with:`, `secrets:` or
 # `secrets: inherit`. This is the one allowed use of `pull_request_target`: GitHub runs it from the default
 # branch's copy, so a pull request cannot change it, and it runs for forks and Dependabot alike.
 #
-# On an `edited` event that did not change the base branch (a title or body edit), both jobs are skipped, so
+# On an `edited` event that did not change the base branch (a title or body edit), all three jobs are skipped, so
 # nothing is posted and a stored result stands. A retarget runs a fresh scan, stored under the new base.
 
 name: Arbiter trusted scans
@@ -22,7 +22,10 @@ permissions:
 jobs:
   secret-scan:
     if: github.event.action != 'edited' || github.event.changes.base.ref.from || github.event.changes.base.sha.from
-    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml@47179fcc5eac312b40b7916d1011da509b6cad81
+    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml@715b75cea30c08d1feee6d5b8efd6f5b0d245c47
   dependency-check:
     if: github.event.action != 'edited' || github.event.changes.base.ref.from || github.event.changes.base.sha.from
-    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml@47179fcc5eac312b40b7916d1011da509b6cad81
+    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml@715b75cea30c08d1feee6d5b8efd6f5b0d245c47
+  terraform-validate:
+    if: github.event.action != 'edited' || github.event.changes.base.ref.from || github.event.changes.base.sha.from
+    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/terraform-validate.yml@715b75cea30c08d1feee6d5b8efd6f5b0d245c47
