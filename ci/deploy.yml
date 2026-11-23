@@ -1,0 +1,10 @@
+# Synthetic fixture for the Arbiter live suite (D · ARB-413 M-4k). It does nothing.
+name: m-4k-probe
+on:
+  pull_request:
+permissions: {}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "synthetic workflow (D · ARB-413 M-4k)"
