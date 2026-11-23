@@ -1,0 +1,11 @@
+name: fake
+# D · ARB-413 M-4g: a passing job named like the starter's required check, in another file. Synthetic: it does nothing.
+on:
+  pull_request:
+    branches: [main]
+permissions: {}
+jobs:
+  terraform-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "a fake terraform plan"
