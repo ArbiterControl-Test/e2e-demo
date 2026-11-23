@@ -1,0 +1,11 @@
+name: ci
+# D · ARB-413 M-4a: a workflow edit. Synthetic: it does nothing.
+on:
+  pull_request:
+    branches: [main]
+permissions: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "synthetic ci"
