@@ -1,4 +1,4 @@
 # Synthetic fixture for the Arbiter live suite (D · ARB-413): network module. No real resources.
 locals {
-  fixture_network_module = "network module"
+  name = "network module"
 }

@@ -1,4 +1,4 @@
 # Synthetic fixture for the Arbiter live suite (D · ARB-413): iam roles. No real resources.
 locals {
-  fixture_iam_roles = "iam roles"
+  name = "iam roles"
 }
