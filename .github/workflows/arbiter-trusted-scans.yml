@@ -22,10 +22,10 @@ permissions:
 jobs:
   secret-scan:
     if: github.event.action != 'edited' || github.event.changes.base.ref.from || github.event.changes.base.sha.from
-    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml@715b75cea30c08d1feee6d5b8efd6f5b0d245c47
+    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml@4d39f76a201a02cc3ea6d0461ae41f440637c90c
   dependency-check:
     if: github.event.action != 'edited' || github.event.changes.base.ref.from || github.event.changes.base.sha.from
-    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml@715b75cea30c08d1feee6d5b8efd6f5b0d245c47
+    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml@4d39f76a201a02cc3ea6d0461ae41f440637c90c
   terraform-validate:
     if: github.event.action != 'edited' || github.event.changes.base.ref.from || github.event.changes.base.sha.from
-    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/terraform-validate.yml@715b75cea30c08d1feee6d5b8efd6f5b0d245c47
+    uses: ArbiterControl-Test/arbiter-trusted/.github/workflows/terraform-validate.yml@4d39f76a201a02cc3ea6d0461ae41f440637c90c

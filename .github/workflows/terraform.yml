@@ -1,5 +1,6 @@
 name: terraform
-# D · ARB-413: the demo suite's synthetic `terraform-plan`, the check the starter's infrastructure/** rule requires.
+# D · ARB-413: the demo suite's synthetic `terraform-plan`, the demo-only ordinary check its infrastructure/** rule
+# requires beside the starter's trusted terraform-validate (D2 · ARB-443).
 # It runs no Terraform. Synthetic fixture: no real code or data.
 on:
   pull_request:
