@@ -1,0 +1,11 @@
+name: gitleaks
+# D · ARB-413 M-5g: an ordinary job named like the trusted secret scan, which always passes. Synthetic: it scans nothing.
+on:
+  pull_request:
+    branches: [main]
+permissions: {}
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "no leaks found (an ordinary job; it scans nothing)"
