@@ -1,0 +1,3 @@
+[submodule "libs/x"]
+	path = libs/x
+	url = https://github.com/ArbiterControl-Test/arbiter-trusted.git
