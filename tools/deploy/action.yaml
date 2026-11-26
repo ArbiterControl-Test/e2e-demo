@@ -1,0 +1,7 @@
+name: deploy
+description: Synthetic action (D · ARB-413 M-4c).
+runs:
+  using: composite
+  steps:
+    - run: echo "synthetic"
+      shell: sh
